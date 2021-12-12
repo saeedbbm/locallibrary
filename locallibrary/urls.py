@@ -26,4 +26,8 @@ urlpatterns = [
     path('catalog/', include('catalog.urls')),  #127.0.0.1:8000/function_name
 ]
 
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) # not needed 
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) # not needed
+
+urlpatterns += [
+    path('accounts/', include('django.contrib.auth.urls')),
+]
