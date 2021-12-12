@@ -1,0 +1,32 @@
+
+
+
+
+{% extends "catalog/base_generic.html" %}
+
+{% block content %}
+    <h1>Author List</h1>
+
+      {% for author in author_list %}
+      <p>Author:</strong>{{ author.first_name }}</p>
+      {% endfor %}
+
+
+      {% if author_list %}
+      <p>There are some authors.</p>
+
+      <ul>
+        {% for author in author_list %}
+        <li>
+          <p>There are a authors.</p>
+          <a href="{{ author.get_absolute_url }}">{{ author.first_name }}</a> ({{author.last_name}})
+        </li>
+        {% endfor %}
+      </ul>
+
+      {% else %}
+        <p>There are no authors.</p>
+      {% endif %}
+
+
+{% endblock %}
